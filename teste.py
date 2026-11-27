@@ -1,5 +1,15 @@
 import streamlit as st
 from datetime import date
+import sqlite3
+
+# conexao Banco de dados
+
+con = sqlite3.connect("motorista.db")
+cur = con.cursor()
+
+cur.execute("CREATE TABLE motorista(id INTEGER PRIMARY KEY AUTOINCREMENT, transportadora TEXT NOT NULL,)")
+
+
 
 st.set_page_config(page_title="Cadastro de Motoristas", layout="wide")
 st.title("Gestão de Transportadoras e Motoristas")
